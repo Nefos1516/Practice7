@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "202093136818",
+    "project_id": "practice7-ba741",
+    "storage_bucket": "practice7-ba741.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202093136818:android:2302adaac388e960db32ab",
+        "android_client_info": {
+          "package_name": "ru.mirea.netelev.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202093136818-1mu5iqhrdmjhelu9813jgjr1g7hakn00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ6qWerVjF3wqydFqNnEfABrmjH9xJiUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202093136818-1mu5iqhrdmjhelu9813jgjr1g7hakn00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202093136818:android:ff1aca5406befc1fdb32ab",
+        "android_client_info": {
+          "package_name": "ru.mirea.netelev.httpurlconnection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202093136818-1mu5iqhrdmjhelu9813jgjr1g7hakn00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ6qWerVjF3wqydFqNnEfABrmjH9xJiUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202093136818-1mu5iqhrdmjhelu9813jgjr1g7hakn00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
