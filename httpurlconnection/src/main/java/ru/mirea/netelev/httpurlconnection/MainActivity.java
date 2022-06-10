@@ -23,18 +23,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView ipText;
-    private TextView cityText;
-    private TextView countryText;
+    private TextView ipTextView;
+    private TextView cityTextView;
+    private TextView countryTextView;
 
-    private final String url = "http://whatismyip.akamai.com/";
+    private final String url = "https://api.ipify.org";
 
     private class DownloadPageTask extends AsyncTask<String, Void, Info> {
 
+        @SuppressLint("SetTextI18n")
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            ipText.setText("Загрузка...");
+            ipTextView.setText("Loading...");
         }
 
         @Override
@@ -49,11 +50,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         protected void onPostExecute(Info info) {
-            ipText.setText(info.getIp());
-            cityText.setText(info.getCity());
-            countryText.setText(info.getCountry());
+            ipTextView.setText("IP: "+ info.getIp());
+            cityTextView.append(info.getCity());
+            countryTextView.append(info.getCountry());
             super.onPostExecute(info);
         }
 
@@ -120,9 +122,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ipText = findViewById(R.id.textIp);
-        cityText = findViewById(R.id.textCity);
-        countryText = findViewById(R.id.textCountry);
+        ipTextView = findViewById(R.id.textIp);
+        cityTextView = findViewById(R.id.textCity);
+        countryTextView = findViewById(R.id.textCountry);
         Button getInfoButton = findViewById(R.id.button);
         getInfoButton.setOnClickListener(this::onGetInfoClick);
     }

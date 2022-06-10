@@ -2,6 +2,7 @@ package ru.mirea.netelev.practice7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,10 +15,9 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String TAG = MainActivity.class.getSimpleName();
+    private final String TAG = MainActivity.class.getSimpleName();
     private TextView mTextView;
-    private String host = "time-a.nist.gov"; // или time-a.nist.gov or time-b.nist.gov
-    private int port = 13;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
         GetTimeTask timeTask = new GetTimeTask();
         timeTask.execute();
     }
+    @SuppressLint("StaticFieldLeak")
     private class GetTimeTask extends AsyncTask<Void, Void, String> {
         @Override
         protected String doInBackground(Void... params) {
             String timeResult = "";
             try {
+                // или time-a.nist.gov or time-b.nist.gov
+                String host = "time-a.nist.gov";
+                int port = 13;
                 Socket socket = new Socket(host, port);
                 BufferedReader reader = SocketUtils.getReader(socket);
                 reader.readLine(); // игнорируем первую строку
